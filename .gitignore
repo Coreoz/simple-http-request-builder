@@ -40,6 +40,7 @@ yarn-debug.log*
 yarn-error.log*
 /.nyc_output/
 /.parcel-cache/
+tsconfig.tsbuildinfo
 
 # yarn
 .yarn/*

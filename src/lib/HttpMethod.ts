@@ -1,11 +1,12 @@
 /**
  * Represent an HTTP method.
  */
-// eslint-disable-next-line import/prefer-default-export
-export const enum HttpMethod {
-  GET = 'GET',
-  POST = 'POST',
-  PUT = 'PUT',
-  DELETE = 'DELETE',
-  PATCH = 'PATCH',
-}
+export const HttpMethod = {
+  GET: 'GET',
+  POST: 'POST',
+  PUT: 'PUT',
+  DELETE: 'DELETE',
+  PATCH: 'PATCH',
+} as const;
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+export type HttpMethod = typeof HttpMethod[keyof typeof HttpMethod];
