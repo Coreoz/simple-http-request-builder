@@ -350,7 +350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^17.0.23":
   version: 17.0.23
   resolution: "@types/node@npm:17.0.23"
   checksum: a3517554737cbb042e76c30d0e5482192ac4d9bea0eeb086e2622d9cabf460a0eb52a696b99fcd18e7fcc93c96db6cc7ae507f6608f256ef0b5c1d8c87a5a470
@@ -3319,9 +3319,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "simple-http-request-builder@workspace:."
   dependencies:
+    "@types/node": ^17.0.23
     "@typescript-eslint/eslint-plugin": ^5.16.0
     "@typescript-eslint/parser": ^5.16.0
     eslint: ^8.12.0
+    eslint-config-airbnb-base: ^15.0.0
     eslint-config-airbnb-typescript: ^16.1.4
     eslint-plugin-import: ^2.25.4
     release-it: ^14.13.1

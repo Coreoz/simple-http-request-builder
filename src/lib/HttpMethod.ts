@@ -1,6 +1,7 @@
 /**
  * Represent an HTTP method.
  */
+// eslint-disable-next-line import/prefer-default-export
 export const enum HttpMethod {
   GET = 'GET',
   POST = 'POST',
