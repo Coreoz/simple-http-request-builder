@@ -36,14 +36,14 @@ const response: Promise<Response> = new HttpRequest<Promise<Response>>(
 
 The `HttpRequest` creation process should generally be made using a dedicated class.
 Examples can be found:
-- In the [Simple HTTP Fetch Client](https://github.com/Coreoz/simple-http-request-builder) library
+- In the [Simple HTTP REST Client](https://github.com/Coreoz/simple-http-rest-client) library
 - In the project templates provided by
 [Create Plume React Project](https://github.com/Coreoz/create-plume-react-project):
 <https://github.com/Coreoz/create-plume-react-project/blob/master/templates/admin/src/api/ApiHttpClient.ts>
 
 HTTP Client sample using fetch
 ------------------------------
-This sample is from [Simple HTTP Fetch Client](https://github.com/Coreoz/simple-http-request-builder) library.
+This sample is from [Simple HTTP REST Client](https://github.com/Coreoz/simple-http-rest-client) library.
 
 ```typescript
 const httpClient = (httpRequest: HttpRequest<unknown>): Promise<Response> => {
