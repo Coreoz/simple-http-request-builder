@@ -54,7 +54,7 @@ export class HttpRequest<T> {
    *
    * This value is set in the {@link constructor}.
    */
-  readonly baseUrl: string;
+  readonly baseUrl: URL;
 
   /**
    * The HTTP method used for the request, see {@link HttpMethod}.
@@ -116,7 +116,7 @@ export class HttpRequest<T> {
     options?: Partial<HttpOptions>,
   ) {
     this.httpClient = httpClient;
-    this.baseUrl = baseUrl;
+    this.baseUrl = new URL(baseUrl);
     this.method = method;
     this.path = path;
     this.headersValue = {};
@@ -130,6 +130,11 @@ export class HttpRequest<T> {
 
   /**
    * Add one or multiple headers to the request.
+   *
+   * To set the `Host` header, {@link hostname} must be used. Else the value will be ignored.
+   * The list of headers that cannot be set is available at
+   * <https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name>
+   *
    * @param headers A key/value object with:
    * **key**: the header name,
    * **value**: the header value.
@@ -137,6 +142,20 @@ export class HttpRequest<T> {
    */
   headers(headers: Record<string, string>) {
     Object.assign(this.headersValue, headers);
+    return this;
+  }
+
+  /**
+   * Change the hostname of the `baseUrl`.
+   * If the `baseUrl` is `https://google.com/api` and the hostname is changed to
+   * `github.com`, then the `baseUrl` will be `https://github.com/api`
+   *
+   * It can be useful to set the `Host` header since fetch does not support
+   * setting the `Host` header directly.
+   * @param hostname The new hostname of the `baseUrl`
+   */
+  hostname(hostname: string) {
+    this.baseUrl.hostname = hostname;
     return this;
   }
 
@@ -211,7 +230,7 @@ export class HttpRequest<T> {
    * Build the full request URL using {@link baseUrl}, {@link path}, {@link queryParamsValue}.
    */
   buildUrl() {
-    return encodeURI(this.baseUrl + this.path) + HttpRequest.buildQueryString(this.queryParamsValue);
+    return encodeURI(this.baseUrl.toString() + this.path) + HttpRequest.buildQueryString(this.queryParamsValue);
   }
 
   /**
