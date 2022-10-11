@@ -26,7 +26,7 @@ Usage example using an [HTTP client](#http-client-sample-using-fetch):
 ```typescript
 const response: Promise<Response> = new HttpRequest<Promise<Response>>(
   httpClient,
-  'http://localhost',
+  'http://localhost/api',
   HttpMethod.GET,
   '/session',
 )
@@ -40,6 +40,8 @@ Examples can be found:
 - In the project templates provided by
 [Create Plume React Project](https://github.com/Coreoz/create-plume-react-project):
 <https://github.com/Coreoz/create-plume-react-project/blob/master/templates/admin/src/api/ApiHttpClient.ts>
+
+In a browser environment, the base URL can be built using the `window.location` object: `${window.location.protocol}//${window.location.host}/api`
 
 HTTP Client sample using fetch
 ------------------------------
