@@ -21,6 +21,7 @@ export type HttpOptions = {
   timeoutAbortController: AbortController,
   /**
    * The credentials mode used for the request. Default is 'same-origin'.
+   * For more information https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#sending_a_request_with_credentials_included
    */
   credentials: RequestCredentials,
 };
