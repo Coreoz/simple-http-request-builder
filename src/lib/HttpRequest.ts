@@ -19,6 +19,10 @@ export type HttpOptions = {
    * The {@link AbortController} that will be used to cancel the request once the timeout is reach.
    */
   timeoutAbortController: AbortController,
+  /**
+   * The credentials mode used for the request. Default is 'same-origin'.
+   */
+  credentials: RequestCredentials,
 };
 
 /**
@@ -125,6 +129,7 @@ export class HttpRequest<T> {
     this.optionValues = {
       timeoutInMillis: options?.timeoutInMillis ?? HTTP_DEFAULT_TIMEOUT_IN_MILLIS,
       timeoutAbortController: options?.timeoutAbortController ?? new AbortController(),
+      credentials: options?.credentials ?? 'same-origin',
     };
   }
 
