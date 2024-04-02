@@ -19,6 +19,11 @@ export type HttpOptions = {
    * The {@link AbortController} that will be used to cancel the request once the timeout is reach.
    */
   timeoutAbortController: AbortController,
+  /**
+   * The credentials mode used for the request. Default is 'same-origin'.
+   * For more information https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#sending_a_request_with_credentials_included
+   */
+  credentials: RequestCredentials,
 };
 
 /**
@@ -125,6 +130,7 @@ export class HttpRequest<T> {
     this.optionValues = {
       timeoutInMillis: options?.timeoutInMillis ?? HTTP_DEFAULT_TIMEOUT_IN_MILLIS,
       timeoutAbortController: options?.timeoutAbortController ?? new AbortController(),
+      credentials: options?.credentials ?? 'same-origin',
     };
   }
 
