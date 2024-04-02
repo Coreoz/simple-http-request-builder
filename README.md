@@ -59,7 +59,7 @@ const httpClient = (httpRequest: HttpRequest<unknown>): Promise<Response> => {
       headers: httpRequest.headersValue,
       method: httpRequest.method,
       body: httpRequest.bodyValue,
-      credentials: 'same-origin',
+      credentials: httpRequest.credentials,
       signal: httpRequest.optionValues.timeoutAbortController.signal,
     },
   )
