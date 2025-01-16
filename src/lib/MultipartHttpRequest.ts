@@ -125,6 +125,15 @@ export class MultipartHttpRequest<T> {
   }
 
   /**
+   * Add request options that will be passed to the HTTP client. See {@link MultipartHttpOptions} for available options.
+   * @param options One or multiple options to attach the request
+   */
+  options(options: Partial<MultipartHttpOptions>) {
+    Object.assign(this.optionValues, options);
+    return this;
+  }
+
+  /**
    * Add data to the multipart request A sample usage is:
    * `request.data([['file', fileData],['password', password]])`.
    *
