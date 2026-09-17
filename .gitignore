@@ -11,7 +11,7 @@
 test-report.xml
 
 # production
-/build
+/dist
 /ts-built
 /ts-server-ssr-built
 

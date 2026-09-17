@@ -32,9 +32,7 @@ export type HttpOptions = {
  * @template T The result type of the execution of the {@link HttpRequest}
  * @return The result of the execution of the {@link HttpRequest}
  */
-export interface HttpClient<T> {
-  (request: HttpRequest<unknown>): T;
-}
+export type HttpClient<T> = (request: HttpRequest<unknown>) => T;
 
 /**
  * 20 seconds timeout.
@@ -205,7 +203,7 @@ export class HttpRequest<T> {
    * To add a non JSON body to the request, {@link body} should be used.
    * @param objectBody A JavaScript object that will be used as a JSON body
    */
-  jsonBody(objectBody: Object) {
+  jsonBody(objectBody: object) {
     this.headers({ 'Content-Type': 'application/json' });
     this.body(JSON.stringify(objectBody));
     return this;

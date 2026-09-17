@@ -1,5 +1,4 @@
-// if someone find out how to use @types/jest and avoid this, please make a PR...
-import { describe, expect, test } from '@jest/globals';
+import { describe, expect, test } from 'vitest';
 import { HttpMethod, HttpRequest } from '../../src';
 
 describe('HttpUrl', () => {
