@@ -14,12 +14,12 @@
   ],
   "scripts": {
     "build": "tsup",
-    "clean": "rm -rf dist",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "lint": "tsc --noEmit -p tsconfig.json && eslint src",
-    "prepare-release": "yarn clean && yarn lint && yarn test && yarn build",
+    "typescript": "tsc --noEmit",
+    "eslint": "eslint src",
+    "prepare-release": "yarn typescript && yarn eslint && yarn test && yarn build",
     "release": "release-it"
   },
   "release-it": {
