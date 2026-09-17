@@ -1,6 +1,6 @@
 {
   "name": "simple-http-request-builder",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A simple HTTP request interface written in TypeScript",
   "author": "Aurélien Manteaux <amanteaux@coreoz.com> (https://coreoz.com)",
   "homepage": "https://github.com/coreoz/simple-http-request-builder",
