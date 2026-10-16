@@ -33,7 +33,7 @@ export type HttpOptions = {
  * @return The result of the execution of the {@link HttpRequest}
  */
 export interface HttpClient<T> {
-  (request: HttpRequest<unknown>): T;
+  (request: HttpRequest<unknown>): T,
 }
 
 /**

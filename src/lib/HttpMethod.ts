@@ -8,5 +8,4 @@ export const HttpMethod = {
   DELETE: 'DELETE',
   PATCH: 'PATCH',
 } as const;
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type HttpMethod = typeof HttpMethod[keyof typeof HttpMethod];
