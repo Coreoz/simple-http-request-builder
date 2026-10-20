@@ -30,7 +30,7 @@ export default [
       '@stylistic': stylistic,
     },
     rules: {
-      '@stylistic/max-len': ['error', { code: 150 }],
+      '@stylistic/max-len': ['error', { code: 120 }],
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/indent': ['error', 2, { offsetTernaryExpressions: false }],
       '@stylistic/quote-props': ['error', 'as-needed'],
